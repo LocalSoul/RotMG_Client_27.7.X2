@@ -90,7 +90,7 @@ public class TextureRedrawer {
         }
         _local_4 = new BitmapDataSpy(((_arg_2 + 4) + 4), ((_arg_2 + 4) + 4), true, 0);
         _local_4.fillRect(new Rectangle(4, 4, _arg_2, _arg_2), (0xFF000000 | _arg_1));
-        _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, OUTLINE_FILTER);
+        _local_4 = GlowRedrawer.addGlow(_local_4, 0, 1, 1);
         _local_3[_arg_1] = _local_4;
         return (_local_4);
     }

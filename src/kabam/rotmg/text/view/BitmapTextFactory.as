@@ -1,8 +1,7 @@
 ﻿package kabam.rotmg.text.view {
-import com.company.util.PointUtil;
+import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
 
 import flash.display.BitmapData;
-import flash.filters.GlowFilter;
 import flash.geom.Matrix;
 import flash.text.TextFieldAutoSize;
 
@@ -12,9 +11,7 @@ import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
 public class BitmapTextFactory {
 
-    private const glowFilter:GlowFilter = new GlowFilter(0, 1, 3, 3, 2, 1);
-
-    public var padding:int = 0;
+    private var padding:int = 0;
     private var textfield:TextFieldDisplayConcrete;
 
     public function BitmapTextFactory(_arg_1:FontModel, _arg_2:TextAndMapProvider) {
@@ -39,7 +36,9 @@ public class BitmapTextFactory {
         var _local_4:int = (this.textfield.height + this.padding);
         var _local_5:BitmapData = new BitmapDataSpy(_local_3, _local_4, true, 0);
         _local_5.draw(this.textfield, _arg_2);
-        ((_arg_1) && (_local_5.applyFilter(_local_5, _local_5.rect, PointUtil.ORIGIN, this.glowFilter)));
+        if (_arg_1) {
+            _local_5 = GlowRedrawer.addGlow(_local_5, 0, 2, 1);
+        }
         return (_local_5);
     }
 

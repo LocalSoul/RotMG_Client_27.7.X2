@@ -211,7 +211,7 @@ public class ConditionEffect {
                 _local_4.draw(AssetLibrary.getImageFromSet("lofiInterface2", _arg_2), _local_5);
             }
             _local_4 = GlowRedrawer.outlineGlow(_local_4, 0xFFFFFFFF);
-            _local_4.applyFilter(_local_4, _local_4.rect, PointUtil.ORIGIN, GLOW_FILTER);
+            _local_4 = GlowRedrawer.addGlow(_local_4, 0, 3, 0.3);
             effectIconCache[_arg_2] = _local_4;
         }
         _arg_1.push(_local_4);
@@ -237,7 +237,7 @@ public class ConditionEffect {
                         _local_6 = new BitmapDataSpy(16, 16, true, 0);
                         _local_6.draw(AssetLibrary.getImageFromSet("lofiInterface2", effects_[_local_3].iconOffsets_[_local_5]), _local_2);
                         _local_6 = GlowRedrawer.outlineGlow(_local_6, 0xFFFFFFFF);
-                        _local_6.applyFilter(_local_6, _local_6.rect, PointUtil.ORIGIN, GLOW_FILTER);
+                        _local_6 = GlowRedrawer.addGlow(_local_6, 0, 3, 0.3);
                         _local_4.push(_local_6);
                         _local_5++;
                     }
@@ -279,7 +279,7 @@ public class ConditionEffect {
                             _local_3.draw(AssetLibrary.getImageFromSet("lofiInterface2", effects_[_local_6].iconOffsets_[_local_7]), _local_4);
                         }
                         _local_3 = GlowRedrawer.outlineGlow(_local_3, 0xFFFFFFFF);
-                        _local_3.applyFilter(_local_3, _local_3.rect, PointUtil.ORIGIN, GLOW_FILTER);
+                        _local_3 = GlowRedrawer.addGlow(_local_3, 0, 3, 0.3);
                         _local_2.push(_local_3);
                         _local_7++;
                     }
